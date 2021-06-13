@@ -1,4 +1,4 @@
-# Android Database Inspector 
+# Android Database Inspector View 
 
 A floating widget displays a list of the databases in your app and the tables that each database contains.
 
