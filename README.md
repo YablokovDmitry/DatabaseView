@@ -2,7 +2,7 @@
 
 A floating widget displays a list of the databases in your app and the tables that each database contains.
 
-<img src=https://user-images.githubusercontent.com/3678050/121823201-51939600-ccac-11eb-97ca-0da476203e13.gif width="285" height="550">
+<img src=https://user-images.githubusercontent.com/3678050/121823201-51939600-ccac-11eb-97ca-0da476203e13.gif width="265" height="550">
 
 
 
