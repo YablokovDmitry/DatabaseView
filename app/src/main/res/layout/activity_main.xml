@@ -1,0 +1,64 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+    </data>
+
+    <LinearLayout
+        android:id="@+id/scroll_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="#f7f7f7"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/table_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="16dp"
+            android:visibility="gone"
+            android:text="&quot;Users&quot; table"
+
+            android:textColor="#707070"
+            android:textSize="22sp"
+            android:textStyle="normal" />
+
+        <Button
+            android:id="@+id/add_user_btn"
+            android:background="@drawable/add_user_btn_selector"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:text="Add User"
+            android:textColor="@android:color/white"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/remove_user_btn"
+            android:layout_marginTop="10dp"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:background="@drawable/remove_btn_selector"
+            android:textColor="@android:color/black"
+
+            android:text="Remove User"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/show_database_btn"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="350dp"
+            android:background="@drawable/show_database_btn_selector"
+            android:text="Show Database"
+            android:textColor="@android:color/white"
+            android:textStyle="normal"
+            android:textSize="16sp"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+    <!-- </ScrollView>-->
+</layout>
