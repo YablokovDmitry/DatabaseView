@@ -37,6 +37,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
         classpath "com.android.tools.build:gradle:$gradleVersion"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
