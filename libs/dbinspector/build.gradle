@@ -34,16 +34,6 @@ android {
     }
 }
 
-project.afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-            }
-        }
-    }
-}
-
 dependencies {
     kapt "androidx.room:room-compiler:$rootProject.roomVersion"
     kapt "com.google.dagger:hilt-android-compiler:$rootProject.hiltVersion"
