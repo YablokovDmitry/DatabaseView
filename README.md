@@ -8,28 +8,44 @@ A floating view displays a list of the databases in your app and the tables that
 
 ## **Usage**
 
-Add it in your root build.gradle at the end of repositories:
+AndroidManifest.xml
 
-     repositories {
-	    ...
-        maven { url "https://jitpack.io" }
-     }	
-Add the dependency
+    <uses-permission android:name="android.permission.ACTION_MANAGE_OVERLAY_PERMISSION" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
-     dependencies {
-         ...
-         implementation 'com.github.YablokovDmitry:DatabaseView:1.2'
-     }
-#### onCreate()
+onCreate()
 
-     // width = 200dp, height = 350dp
-     val floatingWindow = DatabaseInspectorFloatingWindow(this, 200f, 350f, lifecycle)
-        
-     // Show
-     floatingWindow.show()
-        
-     // Hide
-     floatingWindow.dismiss()
+    // width = 200dp, height = 350dp
+    floatingWindow = DatabaseInspectorFloatingWindow(this, 200f, 350f, lifecycle)
+
+Ask for screen overlay permission
+
+    fun startManageDrawOverlaysPermission() {
+        if (VERSION.SDK_INT >= VERSION_CODES.M) {
+            Intent(
+                Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                Uri.parse("package:${applicationContext.packageName}")
+            ).let {
+                startActivityForResult(it, REQUEST_CODE_DRAW_OVERLAY_PERMISSION)
+            }
+        }
+    }
+
+Show window
+ 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        when (requestCode) {
+            REQUEST_CODE_DRAW_OVERLAY_PERMISSION -> {
+                if (canDrawOverlays) {
+                    floatingWindow.show()
+                } else {
+                    showToast("Permission is not granted!")
+                }
+            }
+        }
+    }
+
         
  ### **Developed By**
   - Dmitry Yablokov - [dnyablokov@gmail.com](mailto:dnyablokov@gmail.com)
